@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Sanctum\HasApiTokens;
+use Spatie\Activitylog\LogOptions;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\Permission\Traits\HasRoles;
 
@@ -64,13 +65,14 @@ class User extends Authenticatable
     }
 
     /**
-     * Log
+     * Log de atividades
      */
-    protected static $logAttributes = [
-        'name',
-        'email',
-        'last_login_time',
-        'last_login_ip',
-        'change_password_at'
-    ];
+    public function getActivitylogOptions(): LogOptions
+    {
+        return LogOptions::defaults()
+            ->logAll()
+            ->dontLogIfAttributesChangedOnly(['', ''])
+            ->logOnlyDirty()
+            ->useLogName('Notícias');
+    }
 }
