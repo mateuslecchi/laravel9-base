@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -27,7 +26,7 @@ class User extends Authenticatable
         'password',
         'last_login_time',
         'last_login_ip',
-        'change_password_at'
+        'change_password_at',
     ];
 
     /**
@@ -52,12 +51,11 @@ class User extends Authenticatable
     /**
      * mutator para dt inicial
      */
-
     public function getLastLoginTimeAttribute($date)
     {
-        if (!empty($date)) {
+        if (! empty($date)) {
             $date = date('d/m/Y à\s\ H:i', strtotime($date));
-        }else{
+        } else {
             $date = 'Nunca entrou no sistema!';
         }
 

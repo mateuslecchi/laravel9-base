@@ -3,19 +3,14 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use App\Models\User;
-use Illuminate\Validation\Rules;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
-
-
-
-
+use Illuminate\Validation\Rules;
 
 class ChangePasswordController extends Controller
 {
-
     /**
      * Show the form for creating a new resource.
      *
@@ -23,7 +18,6 @@ class ChangePasswordController extends Controller
      */
     public function index()
     {
-
         return view('auth.change-password');
     }
 

@@ -27,7 +27,6 @@ Route::get('/', function () {
 });
 
 Route::middleware(['auth', 'first_login'])->group(function () {
-
     //rota para dasboard
     Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
 
@@ -48,11 +47,11 @@ Route::middleware(['auth', 'first_login'])->group(function () {
 
     //Grupo de rotas de recursos
     Route::resources([
-        'ferramentas'   => FerramentaController::class,
-        'funcionarios'  => FuncionarioController::class,
-        'paradas'       => ParadaController::class,
-        'emprestimos'   => EmprestimoController::class,
-        'usuarios'      => UserController::class,
+        'ferramentas' => FerramentaController::class,
+        'funcionarios' => FuncionarioController::class,
+        'paradas' => ParadaController::class,
+        'emprestimos' => EmprestimoController::class,
+        'usuarios' => UserController::class,
         'paradas.funcionarios' => FuncionarioParadaController::class,
     ]);
 
@@ -68,5 +67,4 @@ Route::middleware(['auth', 'first_login'])->group(function () {
     Route::get('/relatorios/4', [RelatorioController::class, 'relatorioQuatro'])->name('relatorios.export4');
 });
 
-
-require __DIR__ . '/auth.php';
+require __DIR__.'/auth.php';

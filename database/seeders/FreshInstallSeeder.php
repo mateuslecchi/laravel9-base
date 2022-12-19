@@ -74,22 +74,17 @@ class FreshInstallSeeder extends Seeder
         $consultar_ferramentas = Role::create(['name' => 'Ferramentas - Consultar']);
         $consultar_ferramentas->givePermissionTo('ver_ferramentas');
 
-
         $consultar_paradas = Role::create(['name' => 'Paradas - Consultar']);
         $consultar_paradas->givePermissionTo('ver_paradas');
-
 
         $consultar_emprestimos = Role::create(['name' => 'Empréstimos - Consultar']);
         $consultar_emprestimos->givePermissionTo('ver_emprestimos');
 
-
         $consultar_avaliacoes = Role::create(['name' => 'Avaliações - Consultar']);
         $consultar_avaliacoes->givePermissionTo('ver_avaliacoes');
 
-
         $consultar_usuarios = Role::create(['name' => 'Usuários - Consultar']);
         $consultar_usuarios->givePermissionTo('ver_usuarios');
-
 
         $consultar_relatorios = Role::create(['name' => 'Relatórios - Consultar']);
         $consultar_relatorios->givePermissionTo('ver_relatorios');
@@ -105,26 +100,21 @@ class FreshInstallSeeder extends Seeder
         $editar_ferramentas->givePermissionTo('ver_ferramentas');
         $editar_ferramentas->givePermissionTo('editar_ferramentas');
 
-
         $editar_paradas = Role::create(['name' => 'Paradas - Editar']);
         $editar_paradas->givePermissionTo('ver_paradas');
         $editar_paradas->givePermissionTo('editar_paradas');
-
 
         $editar_emprestimos = Role::create(['name' => 'Empréstimos - Editar']);
         $editar_emprestimos->givePermissionTo('ver_emprestimos');
         $editar_emprestimos->givePermissionTo('editar_emprestimos');
 
-
         $editar_avaliacoes = Role::create(['name' => 'Avaliações - Editar']);
         $editar_avaliacoes->givePermissionTo('ver_avaliacoes');
         $editar_avaliacoes->givePermissionTo('editar_avaliacoes');
 
-
         $editar_usuarios = Role::create(['name' => 'Usuários - Editar']);
         $editar_usuarios->givePermissionTo('ver_usuarios');
         $editar_usuarios->givePermissionTo('editar_usuarios');
-
 
         $editar_relatorios = Role::create(['name' => 'Relatórios - Editar']);
         $editar_relatorios->givePermissionTo('ver_relatorios');

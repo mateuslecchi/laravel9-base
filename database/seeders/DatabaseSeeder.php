@@ -20,9 +20,9 @@ class DatabaseSeeder extends Seeder
             FreshInstallSeeder::class,
             SuperAdminSeeder::class,
 
-            /**
-             * Ambiente de testes
-             */
+        /**
+         * Ambiente de testes
+         */
         ]);
     }
 }

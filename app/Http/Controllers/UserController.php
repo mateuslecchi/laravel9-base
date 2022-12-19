@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Validation\Rules;
 use Spatie\Permission\Models\Role;
 
 class UserController extends Controller
@@ -74,7 +73,7 @@ class UserController extends Controller
 
         $roles = Role::orderBy('name')
             ->whereNotIn('name', $user_roles)
-            ->whereNotIn('name', ['Super Admin', 'Padrão','Relatórios - Editar'])
+            ->whereNotIn('name', ['Super Admin', 'Padrão', 'Relatórios - Editar'])
             ->get();
 
         return view('users.edit', compact('usuario', 'roles', 'user_roles'));
@@ -93,8 +92,7 @@ class UserController extends Controller
             'password' => ['confirmed'],
         ]);
 
-
-        if (!is_null($request->password)) {
+        if (! is_null($request->password)) {
             $usuario->update([
                 'password' => Hash::make($request->password),
                 'change_password_at' => null,
@@ -104,7 +102,7 @@ class UserController extends Controller
         $usuario->update([
             'name' => $request->nome,
         ]);
-        if (!is_null($request->role)) {
+        if (! is_null($request->role)) {
             $usuario->syncRoles($request->role);
         } else {
             $usuario->syncRoles('Padrão');
