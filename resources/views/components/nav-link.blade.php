@@ -1,4 +1,4 @@
-@props(['active'])
+@props(['active','icon'])
 
 @php
     $classes = ($active ?? false)
@@ -8,6 +8,7 @@
 
 <li class="nav-item">
     <a {{ $attributes->merge(['class' => $classes]) }}>
+        <div class="sb-nav-link-icon"><i class="{{ $icon ?? ''}}"></i></div>
         {{ $slot }}
     </a>
 </li>

@@ -1,17 +1,25 @@
-@props(['id' => 'navbarDropdown','active'])
+@props([
+    'id' => 'navbarDropdown',
+    'icon',
+    'title',
+    'parentId' => 'sidenavAccordion',
+    'active'
+])
 
 @php
     $classes = ($active ?? false)
-                ? 'nav-link dropdown-toggle active font-weight-bolder'
-                : 'nav-link dropdown-toggle';
+                ? 'nav-link collapsed active'
+                : 'nav-link collapsed';
 @endphp
 
-<li class="nav-item dropdown">
-    <a id="{{ $id }}" {{ $attributes->merge(['class' => $classes]) }} role="button" data-bs-toggle="dropdown" aria-expanded="false">
-        {{ $trigger }}
-    </a>
-
-    <div class="dropdown-menu dropdown-menu-end animate slideIn" aria-labelledby="{{ $id }}">
-        {{ $content }}
-    </div>
-</li>
+<a {{ $attributes->merge(['class' => $classes]) }} href="#" data-bs-toggle="collapse" data-bs-target="#{{ $id }}" aria-expanded="false"
+    aria-controls="{{ $id }}">
+    <div class="sb-nav-link-icon"><i class="{{ $icon }}"></i></div>
+    {{ $title }}
+    <div class="sb-sidenav-collapse-arrow"><i class="bi bi-chevron-down"></i></div>
+</a>
+<div class="collapse" id="{{ $id }}" aria-labelledby="heading{{ $id }}" data-bs-parent="#{{ $parentId }}">
+    <nav class="sb-sidenav-menu-nested nav">
+        {{ $slot }}
+    </nav>
+</div>
