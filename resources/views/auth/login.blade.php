@@ -11,9 +11,6 @@
 
         <div class="card-body">
             <div class="row">
-                <div class="col d-flex aligns-items-center">
-                    <img src="{{ asset('assets/login.svg') }}" alt="">
-                </div>
                 <div class="col">
                     <!-- Session Status -->
                     <x-auth-session-status class="mb-3" :status="session('status')" />
