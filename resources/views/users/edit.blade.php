@@ -17,9 +17,9 @@
                     </p>
                 </div>
                 <div class=" ">
-                    <button form="form" type="submit" class="btn btn-success btn-sm ">
-                        Salvar
-                    </button>
+                    <x-modal-delete-button target="deleteUser" />
+
+                    <x-button-salvar />
                 </div>
             </div>
             <form id="form" method="POST" action="{{ route('usuarios.update', ['usuario' => $usuario->id]) }}"
@@ -97,10 +97,14 @@
                         <ul>
                             <li><strong>Administrador:</strong> Acesso total ao sistema</li>
                             <li><strong>USUÁRIOS - CONSULTAR:</strong> Consultar USUÁRIOS do sistema cadastrados</li>
-                            <li><strong>USUÁRIOS - EDITAR:</strong> Pode realizar cadastro, edição e exclusão de USUÁRIOS do sistema</li>
+                            <li><strong>USUÁRIOS - EDITAR:</strong> Pode realizar cadastro, edição e exclusão de
+                                USUÁRIOS do sistema</li>
                         </ul>
                     </div>
                 </div>
             </form>
         </div>
 </x-app-layout>
+
+<x-modal-delete target="deleteUser" title="Deletar Usuário?"
+    body="Você está prestes a deleter um usuário do sistema. Essa ação não pode ser revertida." action="{{ route('usuarios.destroy',['usuario' => $usuario->id])}}" />
