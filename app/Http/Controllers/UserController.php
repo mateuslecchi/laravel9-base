@@ -47,7 +47,7 @@ class UserController extends Controller
 
         $new_user->assignRole('Padrão');
 
-        return redirect()->route('usuarios.show', ['usuario' => $new_user->id]);
+        return to_route('usuarios.show', ['usuario' => $new_user->id])->with('success','Usuário criado com sucesso.');
     }
 
     /**
@@ -108,7 +108,7 @@ class UserController extends Controller
             $usuario->syncRoles('Padrão');
         }
 
-        return redirect()->back()->with('success', 'Usuário alterado com sucesso.');
+        return to_route('usuarios.show', ['usuario' => $usuario->id])->with('success','Usuário alterado com sucesso.');
     }
 
     /**
@@ -119,6 +119,8 @@ class UserController extends Controller
      */
     public function destroy(User $usuario)
     {
-        //
+        $usuario->delete();
+
+        return to_route('usuarios.index')->with('success','Usuário excluído com sucesso.');
     }
 }
