@@ -1,9 +1,9 @@
 <x-app-layout>
     @include('users.menu')
 
-    <div class="bg-white shadow rounded p-2 background-table">
+    <div class="card shadow rounded p-2 background-table">
         <table class="table table-hover table-striped table-sm">
-            <thead>
+            <thead class="bg-dark text-white">
                 <tr>
                     <th scope="col" class="col-4">Usuário</th>
                     <th scope="col" class="col-3 text-center">Atribuições</th>

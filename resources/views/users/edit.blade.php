@@ -8,7 +8,7 @@
     @endif
     <!-- Validation Errors -->
     <x-auth-validation-errors class="mb-4" :errors="$errors" />
-    <div class="bg-white shadow rounded p-2">
+    <div class="card shadow rounded p-2">
         <div class="row">
             <div class="col d-flex justify-content-between">
                 <div>
@@ -96,20 +96,8 @@
                         <p>Atribuições:</p>
                         <ul>
                             <li><strong>Administrador:</strong> Acesso total ao sistema</li>
-                            <li><strong>AVALIAÇÕES - CONSULTAR:</strong> Consultar Avaliações de Funcionários</li>
-                            <li><strong>AVALIAÇÕES - EDITAR:</strong> Pode avaliar os Funcionários</li>
-                            <li><strong>EMPRÉSTIMOS - CONSULTAR:</strong> Consultar EMPRÉSTIMOS de ferramentar</li>
-                            <li><strong>EMPRÉSTIMOS - EDITAR:</strong> Pode realizar EMPRÉSTIMOS de ferramentar</li>
-                            <li><strong>FERRAMENTAS - CONSULTAR:</strong> Consultar ferramentas cadastradas</li>
-                            <li><strong>FERRAMENTAS - EDITAR:</strong> Pode realizar cadastro, edição e exclusão de ferramentas</li>
-                            <li><strong>FUNCIONÁRIOS - CONSULTAR:</strong> Consultar FUNCIONÁRIOS cadastrados</li>
-                            <li><strong>FUNCIONÁRIOS - EDITAR:</strong> Pode realizar cadastro, edição e exclusão de FUNCIONÁRIOS</li>
-                            <li><strong>PARADAS - CONSULTAR:</strong> Consultar PARADAS cadastradas</li>
-                            <li><strong>PARADAS - EDITAR:</strong> Pode realizar cadastro, edição e exclusão de PARADAS</li>
-                            <li><strong>RELATÓRIOS - CONSULTAR:</strong> Exportar relatórios</li>
                             <li><strong>USUÁRIOS - CONSULTAR:</strong> Consultar USUÁRIOS do sistema cadastrados</li>
                             <li><strong>USUÁRIOS - EDITAR:</strong> Pode realizar cadastro, edição e exclusão de USUÁRIOS do sistema</li>
-                            <li><strong>Padrão:</strong> Nenhuma modificação no sistema</li>
                         </ul>
                     </div>
                 </div>

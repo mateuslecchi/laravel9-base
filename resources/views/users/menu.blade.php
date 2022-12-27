@@ -21,12 +21,5 @@
 
             @endswitch
         </div>
-        <div class="">
-            <a href="{{ route('usuarios.create') }}" class="btn btn-success btn-sm"><i class="bi bi-plus-lg"></i> Novo</a>
-            <a href="{{ route('usuarios.index') }}" class="btn btn-primary btn-sm"><i class="bi bi-card-list"></i> Listar</a>
-        </div>
     </div>
-
-
-
 </x-slot>

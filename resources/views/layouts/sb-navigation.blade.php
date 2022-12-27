@@ -17,8 +17,12 @@
                     Usuários
                 </x-slot>
 
-                <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios*')">
-                    Acessar
+                <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')" icon="bi bi-card-list">
+                    Todos
+                </x-nav-link>
+
+                <x-nav-link href="{{ route('usuarios.create') }}" :active="request()->routeIs('usuarios.create')" icon="bi bi-plus-lg">
+                    Novo
                 </x-nav-link>
 
             </x-dropdown>
