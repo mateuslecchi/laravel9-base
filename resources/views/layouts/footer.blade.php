@@ -5,7 +5,7 @@
             <div>
                 <a href="#">Privacy Policy</a>
                 &middot;
-                <a href="#">Terms &amp; Conditions</a>
+                <a href="{{ route('ajuda') }}">Ajuda</a>
             </div>
         </div>
     </div>

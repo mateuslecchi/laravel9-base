@@ -12,20 +12,10 @@
 
             <x-nav-divider title="Outros" />
 
-            <x-dropdown id="dropDownTeste" icon="bi bi-people" :active="request()->routeIs('usuarios*')">
-                <x-slot name="title">
-                    Usuários
-                </x-slot>
-
-                <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios.index')" icon="bi bi-card-list">
-                    Todos
-                </x-nav-link>
-
-                <x-nav-link href="{{ route('usuarios.create') }}" :active="request()->routeIs('usuarios.create')" icon="bi bi-plus-lg">
-                    Novo
-                </x-nav-link>
-
-            </x-dropdown>
+            <x-nav-link href="{{ route('usuarios.index') }}" :active="request()->routeIs('usuarios*')"
+                icon="bi bi-people">
+                Usuários
+            </x-nav-link>
 
         </div>
     </div>

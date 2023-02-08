@@ -16,11 +16,7 @@
                         Dados do Usuário:
                     </p>
                 </div>
-                <div class=" ">
-                    <x-modal-delete-button target="deleteUser" />
 
-                    <x-button-salvar />
-                </div>
             </div>
             <form id="form" method="POST" action="{{ route('usuarios.update', ['usuario' => $usuario->id]) }}"
                 enctype="multipart/form-data">
@@ -103,8 +99,15 @@
                     </div>
                 </div>
             </form>
+            <div class="d-flex justify-content-end">
+                <div class="me-1">
+                    <x-modal-delete-button target="deleteUser" />
+                </div>
+                <x-button-salvar />
+            </div>
         </div>
 </x-app-layout>
 
 <x-modal-delete target="deleteUser" title="Deletar Usuário?"
-    body="Você está prestes a deleter um usuário do sistema. Essa ação não pode ser revertida." action="{{ route('usuarios.destroy',['usuario' => $usuario->id])}}" />
+    body="Você está prestes a deleter um usuário do sistema. Essa ação não pode ser revertida."
+    action="{{ route('usuarios.destroy',['usuario' => $usuario->id])}}" />

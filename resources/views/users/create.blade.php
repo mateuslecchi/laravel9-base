@@ -8,11 +8,6 @@
                         Dados do Usuário:
                     </p>
                 </div>
-                <div class=" ">
-                    <button form="form" type="submit" class="btn btn-success btn-sm ">
-                        Salvar
-                    </button>
-                </div>
             </div>
             <form id="form" method="POST" action="{{ route('usuarios.store') }}" enctype="multipart/form-data" autocomplete="off">
                 @csrf
@@ -41,5 +36,10 @@
                     </div>
                 </div>
             </form>
+            <div class="d-flex justify-content-end">
+                <button form="form" type="submit" class="btn btn-success btn-sm ">
+                    Salvar
+                </button>
+            </div>
         </div>
 </x-app-layout>

@@ -31,11 +31,6 @@
                     Alterar Senha
                 </x-dropdown-link>
 
-                <!-- Ajuda -->
-                <x-dropdown-link :href="route('ajuda')">
-                    Ajuda
-                </x-dropdown-link>
-
                 <!-- Authentication -->
                 <form method="POST" action="{{ route('logout') }}">
                     @csrf
